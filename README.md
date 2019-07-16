@@ -1,8 +1,11 @@
 # Programación funcional con JavaScript
 
-## Instalar pacquete
+## Instalar paquete
+
+```bash
   npm i functional-light
-  
+```
+
 ## Ejemplo
 
 ```js
