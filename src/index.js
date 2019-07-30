@@ -1,7 +1,8 @@
 /**
- * Agreaga el elemento value al comienzo de la lista. 
+ * Agrega el elemento value al comienzo de la lista. 
  * @param {*} value 
  * @param {Array} list 
+ * @example cons(1, [2, 3])
  */
 function cons(value, list) {
     let tmp = list.slice(0);

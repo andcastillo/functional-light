@@ -2,7 +2,7 @@
 
 <dl>
 <dt><a href="#cons">cons(value, list)</a></dt>
-<dd><p>Agreaga el elemento value al comienzo de la lista.</p>
+<dd><p>Agrega el elemento value al comienzo de la lista.</p>
 </dd>
 <dt><a href="#first">first(list)</a></dt>
 <dd><p>Retorma el primer elemento de la lista</p>
@@ -28,7 +28,7 @@ este elemento al final de list1.</p>
 <a name="cons"></a>
 
 ## cons(value, list)
-Agreaga el elemento value al comienzo de la lista.
+Agrega el elemento value al comienzo de la lista.
 
 **Kind**: global function  
 
@@ -37,6 +37,10 @@ Agreaga el elemento value al comienzo de la lista.
 | value | <code>\*</code> | 
 | list | <code>Array</code> | 
 
+**Example**  
+```js
+cons(1, [2, 3])
+```
 <a name="first"></a>
 
 ## first(list)
