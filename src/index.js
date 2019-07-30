@@ -2,7 +2,8 @@
  * Agrega el elemento value al comienzo de la lista. 
  * @param {*} value 
  * @param {Array} list 
- * @example cons(1, [2, 3])
+ * @returns {Array}
+ * @example cons(1, [2, 3]); // => [1, 2, 3]
  */
 function cons(value, list) {
     let tmp = list.slice(0);
@@ -13,6 +14,8 @@ function cons(value, list) {
 /**
  * Retorma el primer elemento de la lista
  * @param {Array} list 
+ * @example first([1, 2, 3]) // => 1
+ * @returns {*}
  */
 function first(list) {
     return list.slice(0, 1)[0];
@@ -21,6 +24,8 @@ function first(list) {
 /**
  * Retorna todos los elementos de la lista, excepto el primero
  * @param {Array} list 
+ * @returns {Array}
+ * @example rest([1, 2, 3]); // => [2, 3]
  */
 function rest(list) {
     return list.slice(1);
@@ -29,6 +34,10 @@ function rest(list) {
 /**
  * La lista de entrada está vacio?
  * @param {Array} list 
+ * @returns {boolean}
+ * @example isEmpty([1, 2, 3]); // => false
+ * @example isEmpty([]); // => true
+
  */
 function isEmpty(list) {
     if (typeof list == 'object') {
@@ -38,8 +47,13 @@ function isEmpty(list) {
 }
 
 /**
- * El objeto de entrada es una lista?
- * @param {Array} list 
+ * Retorna verdadero si el objeto de entrada es una lista
+ * @param {Array} list
+ * @returns {boolean} 
+ * @example isList([]); // => true
+ * @example isList([1, 2]); // => true
+ * @example isList(1); // => false
+ * @example isList("Hola"); // => false
  */
 function isList(list) {
     return typeof list === 'object' && typeof list.length == 'number' && list.length >= 0;
@@ -48,6 +62,9 @@ function isList(list) {
 /**
  * Retorna la longitud de un arreglo
  * @param {Array} list 
+ * @returns {Number}
+ * @example length([]); // => 0
+ * @example length([2, 4]); // => 2
  */
 function length(list) {
     return list.length;
@@ -58,6 +75,8 @@ function length(list) {
  * este elemento al final de list1.
  * @param {Array} list1 
  * @param {Array | Object} list2 
+ * @returns {Array}
+ * @example append([1, 2], [3, 4]); // => [1, 2, 3, 4]
  */
 function append(list1, list2) {
     let tmp = list1.slice();
