@@ -1,16 +1,19 @@
 # Programación funcional con JavaScript
 
-## Instalar paquete
+## Instalación paquete
 
 ```bash
   npm i functional-light
 ```
 
+## Documentación del API
+
+[Ver todas las funciones](docs/functional-light.md)
+
 ## Ejemplo
 
 ```js
 const { cons, first, rest, isEmpty, isList } = require('functional-light');
-
 
 console.log(cons('1',[])); // ['1']
 console.log(cons('2', cons('1',[]))); // ['2', '1']

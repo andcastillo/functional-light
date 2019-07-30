@@ -1,6 +1,6 @@
 {
     "name": "functional-light",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Librería para el curso de programación funcional con JavaScript",
     "keywords": [
         "functional",
@@ -33,18 +33,20 @@
         "build-clean": "rimraf ./lib/",
         "build-dist": "cheminfo build -u",
         "compile": "babel src --out-dir lib --quiet --ignore __tests__",
-        "prepublish": "npm run compile"
+        "prepublish": "npm run compile",
+        "jsdoc": "jsdoc2md src/index.js > docs/functional-light.md"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
         "babel-preset-env": "^1.7.0",
+        "chai": "4.2.0",
         "eslint": "^5.15.3",
         "eslint-config-cheminfo": "^1.20.1",
         "eslint-plugin-import": "^2.16.0",
         "eslint-plugin-jest": "^22.4.1",
         "jest": "^24.5.0",
-        "rimraf": "^2.6.3",
-        "chai": "4.2.0"
+        "jsdoc-to-markdown": "^5.0.0",
+        "rimraf": "^2.6.3"
     },
     "dependencies": {}
 }
