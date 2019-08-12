@@ -55,9 +55,25 @@ Creamos la carpeta que contendrá el código fuente. Estos pasos se pueden hacer
 mkdir src
 ```
 
-Dentro de esta carpeta pondremos todo nuestro código fuente. Para este ejemplo supongamos que queremos extender nuestra librería functional-light para agregar la función map, que recibe un arreglo, un función f y retorna una nueva lista con los elementos de la lista original mapeados usando la función f.
+Dentro de esta carpeta pondremos todo nuestro código fuente. Para este ejemplo supongamos que queremos extender nuestra librería functional-light para agregar la función map, que recibe un arreglo, un función f y retorna una nueva lista con los elementos de la lista original mapeados usando la función f. El siguiente código debe ir en *src/index.js*
 
 ``` js
-const 
+const { cons, first, rest, isEmpty, isList, append, length } = require('functional-light');
+
+/**
+ * Apply a function f to each element of the array a
+ * @param {Array} a 
+ * @param {function} f 
+ * @example console.log(map([1,2,3], x => x*x)); // => [1, 4, 9]
+ */
+let map = function(a, f) {
+    if (isEmpty(a)) {
+        return [];
+    } else {
+        return cons(f(first(a)), map(rest(a), f));
+    }
+}
+// We export all the previous functions +  our current implementation of map
+module.exports = { cons, first, rest, isEmpty, isList, append, length, map }
 ```
 
