@@ -46,4 +46,18 @@ Luego instalamos la librería functional-light y jest para la pruebas. Con los c
 npm i functional-light
 npm i jest --save-dev
 npm i browserify --save-dev
+npm i rimraf --save-dev
 ```
+
+Creamos la carpeta que contendrá el código fuente. Estos pasos se pueden hacer desde el IDE de desarrollo o desde el navegador de archivos. Aqui continuo en bash
+
+``` bash
+mkdir src
+```
+
+Dentro de esta carpeta pondremos todo nuestro código fuente. Para este ejemplo supongamos que queremos extender nuestra librería functional-light para agregar la función map, que recibe un arreglo, un función f y retorna una nueva lista con los elementos de la lista original mapeados usando la función f.
+
+``` js
+const 
+```
+
