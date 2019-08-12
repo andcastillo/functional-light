@@ -116,7 +116,7 @@ Ahora para obtener una librería que pueda ser usada en nuestro framework-canvas
 npm run build
 ```
 
-Ahora tendremos un nuestro archivo en la carpeta **dist**. El archivo se llama **fl-extended.js** según especificamos en el package.json
+Ahora tendremos nuestro archivo compilado en la carpeta **dist**. El archivo se llama **fl-extended.js** según especificamos en el package.json
 Ahora pueden copiar este archivo dentro de la carpeta web-lib de su proyecto HTML y deben importarlo usando una etiqueta de script. Algo como esto:
 
 ``` html
