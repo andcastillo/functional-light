@@ -32,11 +32,11 @@ console.log(foo); // Debe imprimir [484]
 ```
 # Crear un nuevo proyecto usando esta librería
 
-Crear un nuevo directorio para el proyecto. En este ejemplo usaremos foo. Luego debemos inicializar el proyecto usando npm init y llenar los campos de manera adecuada según le pregunte la herramienta. Usar *jest* para las pruebas
+Crear un nuevo directorio para el proyecto. En este ejemplo usaremos **fl-extended**. Luego debemos inicializar el proyecto usando npm init y llenar los campos de manera adecuada según le pregunte la herramienta. Usar *jest* para las pruebas
 
 ``` bash
-mkdir foo
-cd foo
+mkdir fl-extended
+cd fl-extended
 npm init
 ```
 
@@ -51,22 +51,22 @@ npm i browserify --save-dev
 Incluya los siguientes scripts en el archivo package.json
 
 ``` js
-"scripts": {
+  "scripts": {
     "test": "jest",
-    "build": "browserify -r ./src/index.js -o ./dist/fl.js"
+    "build": "browserify -r ./src/index.js:fl-extended -o ./dist/fl-extended.js"
   }
 ```
 El archivo package.json debería verse como esto:
 
 ``` js
 {
-  "name": "foo",
+  "name": "fl-extended",
   "version": "1.0.0",
   "description": "Example project",
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "build": "browserify -r ./src/index.js -o ./dist/fl.js"
+    "build": "browserify -r ./src/index.js:fl-extended -o ./dist/fl-extended.js"
   },
   "author": "Andres M. Castillo",
   "license": "MIT",
@@ -116,12 +116,12 @@ Ahora para obtener una librería que pueda ser usada en nuestro framework-canvas
 npm run build
 ```
 
-Ahora tendremos un nuestro archivo en la carpeta **dist**. El archivo se llama **fl.js** según especificamos en el package.json
+Ahora tendremos un nuestro archivo en la carpeta **dist**. El archivo se llama **fl-extended.js** según especificamos en el package.json
 Ahora pueden copiar este archivo dentro de la carpeta web-lib de su proyecto HTML y deben importarlo usando una etiqueta de script. Algo como esto:
 
 ``` html
 <script src="web-lib/fl.js"></script>
 <script>
   // Importamos las librerias
-  let { append, cons, first, isEmpty, isList, length, rest, map } = functionalLight;
+  let { append, cons, first, isEmpty, isList, length, rest, map } = require('fl-extended');
 ```
