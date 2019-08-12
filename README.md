@@ -46,7 +46,38 @@ Luego instalamos la librería functional-light y jest para la pruebas. Con los c
 npm i functional-light
 npm i jest --save-dev
 npm i browserify --save-dev
-npm i rimraf --save-dev
+```
+
+Incluya los siguientes scripts en el archivo package.json
+
+``` js
+"scripts": {
+    "test": "jest",
+    "build": "browserify -r ./src/index.js -o ./dist/fl.js"
+  }
+```
+El archivo package.json debería verse como esto:
+
+``` js
+{
+  "name": "foo",
+  "version": "1.0.0",
+  "description": "Example project",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "browserify -r ./src/index.js -o ./dist/fl.js"
+  },
+  "author": "Andres M. Castillo",
+  "license": "MIT",
+  "dependencies": {
+    "functional-light": "^0.2.0"
+  },
+  "devDependencies": {
+    "browserify": "^16.5.0",
+    "jest": "^24.8.0",
+  }
+}
 ```
 
 Creamos la carpeta que contendrá el código fuente. Estos pasos se pueden hacer desde el IDE de desarrollo o desde el navegador de archivos. Aqui continuo en bash
@@ -77,3 +108,20 @@ let map = function(a, f) {
 module.exports = { cons, first, rest, isEmpty, isList, append, length, map }
 ```
 
+## Compilar el paquete para el navegador
+
+Ahora para obtener una librería que pueda ser usada en nuestro framework-canvas, debemos compilar el proyecto para obtener un archivo javascript para el navegador. Para esto, debemos compilar usando browserify
+
+``` bash
+npm run build
+```
+
+Ahora tendremos un nuestro archivo en la carpeta dist. El archivo se llama fl.js según especificamos en el package.json
+Ahora pueden copiar este archivo dentro de la carpeta web-lib de su proyecto HTML y deben importarlo usando una etiqueta de script. Algo como esto:
+
+``` html
+<script src="web-lib/fl.js"></script>
+<script>
+  // Importamos las librerias
+  let { append, cons, first, isEmpty, isList, length, rest, map } = functionalLight;
+```
