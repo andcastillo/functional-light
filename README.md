@@ -120,7 +120,7 @@ Ahora tendremos un nuestro archivo en la carpeta **dist**. El archivo se llama *
 Ahora pueden copiar este archivo dentro de la carpeta web-lib de su proyecto HTML y deben importarlo usando una etiqueta de script. Algo como esto:
 
 ``` html
-<script src="web-lib/fl.js"></script>
+<script src="web-lib/fl-extended.js"></script>
 <script>
   // Importamos las librerias
   let { append, cons, first, isEmpty, isList, length, rest, map } = require('fl-extended');
