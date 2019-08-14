@@ -23,6 +23,12 @@
 <dd><p>Concatena la list2 al final de la list1. Si list2 no es un arreglo, simplemente agrega
 este elemento al final de list1.</p>
 </dd>
+<dt><a href="#filter">filter(l, f)</a> ⇒ <code>Array</code></dt>
+<dd><p>Filtra la lista l usando la función f.</p>
+</dd>
+<dt><a href="#map">map(a, f)</a> ⇒ <code>Array</code></dt>
+<dd><p>Aplica la función f a cada elemento del arreglo a</p>
+</dd>
 </dl>
 
 <a name="cons"></a>
@@ -152,4 +158,36 @@ este elemento al final de list1.
 **Example**  
 ```js
 append([1, 2], [3, 4]); // => [1, 2, 3, 4]
+```
+<a name="filter"></a>
+
+## filter(l, f) ⇒ <code>Array</code>
+Filtra la lista l usando la función f.
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| l | <code>Array</code> |  |
+| f | <code>function</code> | función booleana |
+
+**Example**  
+```js
+filter([1, 2, 3, 4, 5], x => x % 2 === 1); // => [1, 3, 5]
+```
+<a name="map"></a>
+
+## map(a, f) ⇒ <code>Array</code>
+Aplica la función f a cada elemento del arreglo a
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| a | <code>Array</code> | 
+| f | <code>function</code> | 
+
+**Example**  
+```js
+console.log(map([1,2,3], x => x*x)); // => [1, 4, 9]
 ```

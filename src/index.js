@@ -112,6 +112,7 @@ function filter(l, f) {
  * Aplica la función f a cada elemento del arreglo a
  * @param {Array} a 
  * @param {function} f 
+ * @returns {Array}
  * @example console.log(map([1,2,3], x => x*x)); // => [1, 4, 9]
  */
 let map = function(a, f) {
