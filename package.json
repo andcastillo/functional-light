@@ -34,7 +34,8 @@
         "build-dist": "cheminfo build -u",
         "compile": "babel src --out-dir lib --quiet --ignore __tests__",
         "prepublish": "npm run compile",
-        "jsdoc": "jsdoc2md src/index.js > docs/functional-light.md"
+        "jsdoc": "jsdoc2md src/index.js > docs/functional-light.md",
+        "publish": "npm publish"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
