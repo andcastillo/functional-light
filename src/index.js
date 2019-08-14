@@ -91,4 +91,35 @@ function append(list1, list2) {
     }
 }
 
-module.exports = {cons, first, rest, isEmpty, isList, length, append};
+/**
+ * Filtra la lista l usando la función f.
+ * @param {Array} l 
+ * @param {function} f función booleana 
+ * @returns {Array}
+ * @example filter([1, 2, 3, 4, 5], x => x % 2 === 1); // => [1, 3, 5]
+ */
+function filter(l, f) {
+    if (isEmpty(l)) {
+        return [];
+    } else if (f(first(l))) {
+        return cons(first(l), filter(rest(l), f))
+    } else {
+        return filter(rest(l), f);
+    }
+}
+
+/**
+ * Aplica la función f a cada elemento del arreglo a
+ * @param {Array} a 
+ * @param {function} f 
+ * @example console.log(map([1,2,3], x => x*x)); // => [1, 4, 9]
+ */
+let map = function(a, f) {
+    if (isEmpty(a)) {
+        return [];
+    } else {
+        return cons(f(first(a)), map(rest(a), f));
+    }
+}
+
+module.exports = {cons, first, rest, isEmpty, isList, length, append, filter, map};
