@@ -125,3 +125,7 @@ Ahora pueden copiar este archivo dentro de la carpeta web-lib de su proyecto HTM
   // Importamos las librerias
   let { append, cons, first, isEmpty, isList, length, rest, map } = require('fl-extended');
 ```
+
+## Crear una suite de pruebas usando JEST
+
+Para crear las pruebas de las funciones vamos a utilizar el framework para pruebas JEST
