@@ -128,4 +128,25 @@ Ahora pueden copiar este archivo dentro de la carpeta web-lib de su proyecto HTM
 
 ## Crear una suite de pruebas usando JEST
 
-Para crear las pruebas de las funciones vamos a utilizar el framework para pruebas JEST
+Para crear las pruebas de las funciones vamos a utilizar el framework para pruebas JEST. 
+
+La pruebas se deben poner una carpeta con nombre __tests__
+
+``` js
+    
+const { assert } = require('chai');
+
+const { cons, first, rest, isEmpty, isList, append, length, filter, map } = require('../');
+
+describe('functional-light', () => {
+    it('test cons', () => {
+        assert.typeOf(cons('1', []), 'array'); // ['1']
+        assert.deepEqual(cons('1', []), ['1']); // ['1']
+        assert.deepEqual(cons('2', cons('1', [])), ['2', '1']); // ['2', '1']
+        assert.deepEqual(cons(1, [2, 3]), [1, 2, 3]);
+        const foo = cons(484, []);
+        cons('XX', foo)
+        assert.deepEqual(foo, cons(484, []));
+    });
+}
+```
