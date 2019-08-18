@@ -130,7 +130,7 @@ Ahora pueden copiar este archivo dentro de la carpeta web-lib de su proyecto HTM
 
 Para crear las pruebas de las funciones vamos a utilizar el framework para pruebas JEST. 
 
-La pruebas se deben poner una carpeta con nombre __tests__
+La pruebas se deben poner una carpeta con nombre __tests__. A continuación se muesta un ejemplo de suite de pruebas. deepEqual sirve para hacer pruebas sobre arreglos
 
 ``` js
     
