@@ -25,6 +25,8 @@ console.log(isEmpty(9)); // false
 console.log(rest(cons(1, cons(2, [])))); // [2]
 console.log(rest([])); // []
 console.log(cons(1, [2, 3])); // []
+console.log(length(cons(1, [2, 3]))); // 3
+
 
 const foo = cons(484, []);
 console.log(cons('XX', foo))
