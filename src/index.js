@@ -102,7 +102,7 @@ function filter(l, f) {
     if (isEmpty(l)) {
         return [];
     } else if (f(first(l))) {
-        return cons(first(l), filter(rest(l), f))
+        return cons(deepCopy(first(l)), filter(rest(l), f))
     } else {
         return filter(rest(l), f);
     }
@@ -119,8 +119,18 @@ let map = function(a, f) {
     if (isEmpty(a)) {
         return [];
     } else {
-        return cons(f(first(a)), map(rest(a), f));
+        return cons(deepCopy(f(first(a))), map(rest(a), f));
     }
 }
 
-module.exports = {cons, first, rest, isEmpty, isList, length, append, filter, map};
+/**
+ * Realiza una copia profunda(recursiva) del objeto que se pasa como parámetro
+ * @param {object} value 
+ * @returns {object}
+ * @example deepCopy({a: 10, b: {a: 45}}); // => {a: 10, b: {a: 45}}
+ */
+let deepCopy = function(value) {
+    return JSON.parse(JSON.stringify(value));
+}
+
+module.exports = {cons, first, rest, isEmpty, isList, length, append, filter, map, deepCopy};

@@ -1,6 +1,6 @@
 {
     "name": "functional-light",
-    "version": "0.3.1",
+    "version": "0.5.1",
     "description": "Librería para el curso de programación funcional con JavaScript",
     "keywords": [
         "functional",
@@ -35,7 +35,7 @@
         "compile": "babel src --out-dir lib --quiet --ignore __tests__",
         "prepublish": "npm run compile",
         "jsdoc": "jsdoc2md src/index.js > docs/functional-light.md",
-        "publish": "npm publish"
+        "publish2": "npm publish"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
