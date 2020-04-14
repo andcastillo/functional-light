@@ -115,7 +115,7 @@ function filter(l, f) {
  * @returns {Array}
  * @example console.log(map([1,2,3], x => x*x)); // => [1, 4, 9]
  */
-let map = function(a, f) {
+let map = function (a, f) {
     if (isEmpty(a)) {
         return [];
     } else {
@@ -129,7 +129,7 @@ let map = function(a, f) {
  * @returns {object}
  * @example deepCopy({a: 10, b: {a: 45}}); // => {a: 10, b: {a: 45}}
  */
-let deepCopy = function(value) {
+let deepCopy = function (value) {
     return JSON.parse(JSON.stringify(value));
 }
 
@@ -144,9 +144,9 @@ let deepCopy = function(value) {
  */
 function forEach(l, f, index = 0) {
     if (!isEmpty(l)) {
-      f(first(l), index);
-      forEach(rest(l), f, index + 1);
+        f(first(l), index);
+        forEach(rest(l), f, index + 1);
     }
-  }
+}
 
-module.exports = {cons, first, rest, isEmpty, isList, length, append, filter, map, deepCopy};
+module.exports = { cons, first, rest, isEmpty, isList, length, append, filter, map, deepCopy, forEach };
