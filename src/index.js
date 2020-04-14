@@ -133,4 +133,20 @@ let deepCopy = function(value) {
     return JSON.parse(JSON.stringify(value));
 }
 
+/**
+ * Aplica una función f a cada elemento de la lista. La función f
+ * recibe el elemento de la lista y el índice en el cual se encuentra.
+ * El tercer parámetro es un desplazamiento del índice. Por defecto en 0
+ * @param {Array} l 
+ * @param {function} f 
+ * @param {number} offset
+ * @example forEach([1, 2, 3], (a, i) => console.log(i + " : " + a));
+ */
+function forEach(l, f, index = 0) {
+    if (!isEmpty(l)) {
+      f(first(l), index);
+      forEach(rest(l), f, index + 1);
+    }
+  }
+
 module.exports = {cons, first, rest, isEmpty, isList, length, append, filter, map, deepCopy};
