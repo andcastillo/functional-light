@@ -148,5 +148,16 @@ function forEach(l, f, index = 0) {
         forEach(rest(l), f, index + 1);
     }
 }
+/**
+ * Concatena 2 listas.
+ * @param {Array} list1 
+ * @param {Array} list2 
+ * @returns {Array}
+ * @example concat([1, 2], [3, 4]); // [1, 2, 3, 4]
+ */
+function concat(list1, list2) {
+    if (isEmpty(list1)) return list2;
+    return cons(first(list1), concat(rest(list1), list2));
+}
 
-module.exports = { cons, first, rest, isEmpty, isList, length, append, filter, map, deepCopy, forEach };
+module.exports = { cons, first, rest, isEmpty, isList, length, append, filter, map, deepCopy, forEach, concat };

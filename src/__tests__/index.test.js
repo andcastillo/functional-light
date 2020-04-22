@@ -1,6 +1,6 @@
 const { assert } = require('chai');
 
-const { cons, first, rest, isEmpty, isList, append, length, filter, map } = require('../');
+const { cons, first, rest, isEmpty, isList, append, length, filter, map, concat } = require('../');
 
 describe('functional-light', () => {
     it('test cons', () => {
@@ -53,4 +53,11 @@ describe('functional-light', () => {
     it('test filter', () => {
         assert.deepEqual(filter([1, 2, 3, 4, 5], x => x % 2 === 1), [1, 3, 5]); // TRUE
     });
+
+    it('test concat', () => {
+        assert.deepEqual(concat([1, 2, 3], [4, 5]), [1, 2, 3, 4, 5]); // TRUE
+        assert.deepEqual(concat([], [4, 5]), [4, 5]); // TRUE
+        assert.deepEqual(concat([1, 2, 3], []), [1, 2, 3]); // TRUE
+        assert.deepEqual(concat([], []), []); // TRUE
+    }) ;
 });
