@@ -29,6 +29,17 @@ este elemento al final de list1.</p>
 <dt><a href="#map">map(a, f)</a> ⇒ <code>Array</code></dt>
 <dd><p>Aplica la función f a cada elemento del arreglo a</p>
 </dd>
+<dt><a href="#deepCopy">deepCopy(value)</a> ⇒ <code>object</code></dt>
+<dd><p>Realiza una copia profunda(recursiva) del objeto que se pasa como parámetro</p>
+</dd>
+<dt><a href="#forEach">forEach(l, f, offset)</a></dt>
+<dd><p>Aplica una función f a cada elemento de la lista. La función f
+recibe el elemento de la lista y el índice en el cual se encuentra.
+El tercer parámetro es un desplazamiento del índice. Por defecto en 0</p>
+</dd>
+<dt><a href="#concat">concat(list1, list2)</a> ⇒ <code>Array</code></dt>
+<dd><p>Concatena 2 listas.</p>
+</dd>
 </dl>
 
 <a name="cons"></a>
@@ -190,4 +201,54 @@ Aplica la función f a cada elemento del arreglo a
 **Example**  
 ```js
 console.log(map([1,2,3], x => x*x)); // => [1, 4, 9]
+```
+<a name="deepCopy"></a>
+
+## deepCopy(value) ⇒ <code>object</code>
+Realiza una copia profunda(recursiva) del objeto que se pasa como parámetro
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| value | <code>object</code> | 
+
+**Example**  
+```js
+deepCopy({a: 10, b: {a: 45}}); // => {a: 10, b: {a: 45}}
+```
+<a name="forEach"></a>
+
+## forEach(l, f, offset)
+Aplica una función f a cada elemento de la lista. La función f
+recibe el elemento de la lista y el índice en el cual se encuentra.
+El tercer parámetro es un desplazamiento del índice. Por defecto en 0
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| l | <code>Array</code> | 
+| f | <code>function</code> | 
+| offset | <code>number</code> | 
+
+**Example**  
+```js
+forEach([1, 2, 3], (a, i) => console.log(i + " : " + a));
+```
+<a name="concat"></a>
+
+## concat(list1, list2) ⇒ <code>Array</code>
+Concatena 2 listas.
+
+**Kind**: global function  
+
+| Param | Type |
+| --- | --- |
+| list1 | <code>Array</code> | 
+| list2 | <code>Array</code> | 
+
+**Example**  
+```js
+concat([1, 2], [3, 4]); // [1, 2, 3, 4]
 ```
