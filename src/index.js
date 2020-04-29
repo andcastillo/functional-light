@@ -63,6 +63,19 @@ function isList(list) {
 }
 
 /**
+ * Retorna verdadero si el objeto de entrada es una cadena de texto
+ * @param {String} str
+ * @returns {boolean} 
+ * @example isString(""); // => true
+ * @example isString([1, 2]); // => false
+ * @example isString(1); // => false
+ * @example isString("Hola"); // => true
+ */
+function isString(str) {
+    return typeof str === 'string' && typeof str.length == 'number' && str.length >= 0;
+}
+
+/**
  * Retorna la longitud de un arreglo
  * @param {Array} list 
  * @returns {Number}
