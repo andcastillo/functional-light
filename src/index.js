@@ -37,10 +37,13 @@ function rest(list) {
  * @returns {boolean}
  * @example isEmpty([1, 2, 3]); // => false
  * @example isEmpty([]); // => true
-
+ * @example isEmpty(""); // => true
  */
 function isEmpty(list) {
     if (typeof list == 'object') {
+        return list.length === 0;
+    }
+    if (typeof list == 'string') {
         return list.length === 0;
     }
     return false;
