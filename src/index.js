@@ -37,10 +37,13 @@ function rest(list) {
  * @returns {boolean}
  * @example isEmpty([1, 2, 3]); // => false
  * @example isEmpty([]); // => true
-
+ * @example isEmpty(""); // => true
  */
 function isEmpty(list) {
     if (typeof list == 'object') {
+        return list.length === 0;
+    }
+    if (typeof list == 'string') {
         return list.length === 0;
     }
     return false;
@@ -57,6 +60,19 @@ function isEmpty(list) {
  */
 function isList(list) {
     return typeof list === 'object' && typeof list.length == 'number' && list.length >= 0;
+}
+
+/**
+ * Retorna verdadero si el objeto de entrada es una cadena de texto
+ * @param {String} str
+ * @returns {boolean} 
+ * @example isString(""); // => true
+ * @example isString([1, 2]); // => false
+ * @example isString(1); // => false
+ * @example isString("Hola"); // => true
+ */
+function isString(str) {
+    return typeof str === 'string' && typeof str.length == 'number' && str.length >= 0;
 }
 
 /**
